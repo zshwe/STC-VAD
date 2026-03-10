@@ -16,7 +16,7 @@ class SCA(nn.Module):
         self.num_heads = num_heads
         head_dim = dim1 // num_heads
 
-        self.scale = qk_scale or head_dim ** -0.5
+        self.scale = qk_scale or head_dim 
 
         self.q = nn.Linear(dim1, self.num_heads, bias=qkv_bias)
         self.k = nn.Linear(dim1, self.num_heads, bias=qkv_bias)  
@@ -76,4 +76,5 @@ if __name__ == '__main__':
     output = block(input_tensor, 16, 16)
 
     print("输入尺寸:", input_tensor.size())
+
     print("输出尺寸:", output.size())
